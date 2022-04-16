@@ -1,0 +1,35 @@
+{
+  "name": "ISM-Project-2022",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DistronX/ISM-Project-2022.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DistronX/ISM-Project-2022/issues"
+  },
+  "homepage": "https://github.com/DistronX/ISM-Project-2022#readme",
+  "dependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "body-parser": "^1.20.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "mongoose": "^6.3.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.13.0",
+    "nodemon": "^2.0.15"
+  }
+}
