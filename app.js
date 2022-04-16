@@ -3,7 +3,7 @@ import cors from 'cors';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
 
-import './config/mongo.js';
+// import './config/mongo.js';
 import {router as UserRouter} from './src/routers/user.js';
 
 const app = express();
@@ -21,7 +21,7 @@ app.use('/user', UserRouter);
 
 app.get('/', (req, res) => {
   try{
-    res.render("user_signup");
+    res.render("index");
   }catch(err){
     console.log(err);
     res.status(500).send(err);

@@ -1,0 +1,13 @@
+.custom-jumbo {
+    padding: 1.5rem 0;
+    margin-bottom: 1.5rem;
+    background-color: rgb(238, 235, 235);
+}
+
+.cta {
+    display: flex;
+}
+
+.cta-form {
+    margin-right: 1.2rem;
+}
