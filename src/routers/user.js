@@ -20,6 +20,6 @@ router.post('/signup', async (req, res) => {
   }catch(err){
     res.send(err.message);
   }
-})
+});
 
 export {router};
