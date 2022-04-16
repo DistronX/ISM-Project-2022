@@ -3,7 +3,7 @@ import bcrypt from 'bcryptjs';
 import validator from "validator";
 
 
-const UserSchema = new mongoose.Schema({
+const DoctorSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -29,7 +29,11 @@ const UserSchema = new mongoose.Schema({
   }
 });
 
-UserSchema.pre("save", async function(next) {
+
+// This validator is trimming all the fields and is removing special characters from string entries.
+// Used function because pre method doesn't support arrow functions as call back.
+// pre is basicall
+DoctorSchema.pre("save", async function(next) {
   if (this.isModified("password")) {
     const hash = await bcrypt.hash(this.password, 8);
     this.password = hash;
@@ -37,7 +41,6 @@ UserSchema.pre("save", async function(next) {
   next();
 });
 
+const Doctor = mongoose.model('Doctor', DoctorSchema);
 
-const User = mongoose.model('User', UserSchema);
-
-export {User};
+export {Doctor};

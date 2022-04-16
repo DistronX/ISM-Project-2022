@@ -4,6 +4,7 @@ import morgan from 'morgan';
 import bodyParser from 'body-parser';
 
 import './config/mongo.js';
+import {router as UserRouter} from './src/routers/user.js';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -15,6 +16,8 @@ app.use(cors());
 app.use(morgan("dev"));
 app.set("view engine","ejs");
 
+
+app.use('/user', UserRouter);
 
 app.get('/', (req, res) => {
   try{
