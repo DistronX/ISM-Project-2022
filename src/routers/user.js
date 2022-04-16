@@ -1,11 +1,12 @@
 import express from 'express';
+import { User } from '../models/user.js';
 
 const router = new express.Router();
 
 
 router.get('/signup', async (req, res) => {
   try{
-    res.render("signup");
+    res.render("user_signup");
   }catch(err){
     res.send(err.message);
   }
@@ -13,8 +14,9 @@ router.get('/signup', async (req, res) => {
 
 router.post('/signup', async (req, res) => {
   try{
-    console.log(req.body);
-    res.send("ok fine");
+    const user = new User(req.body);
+    await user.save();
+    res.send(user);
   }catch(err){
     res.send(err.message);
   }
