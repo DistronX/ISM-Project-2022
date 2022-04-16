@@ -34,9 +34,24 @@ const DoctorSchema = new mongoose.Schema({
 });
 
 
+//static function to find an admin using email and password
+DoctorSchema.statics.findByCredentials = async (email, password) => {
+  const doctor = await Doctor.findOne({
+    email: email,
+  });
+  if (!doctor) {
+    throw new Error("User not found");
+  }
+  const passwordMatched = await bcrypt.compare(password, doctor.password);
+  if (!passwordMatched) {
+    return "Password Incorrect";
+  }
+  return doctor;
+};
+
 // This validator is trimming all the fields and is removing special characters from string entries.
 // Used function because pre method doesn't support arrow functions as call back.
-// pre is basicall
+// pre is basically a before save call
 DoctorSchema.pre("save", async function(next) {
   if (this.isModified("password")) {
     const hash = await bcrypt.hash(this.password, 8);

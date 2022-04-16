@@ -22,4 +22,14 @@ router.post('/signup', async (req, res) => {
   }
 });
 
+router.post('/login', async (req, res) => {
+  try{
+    const {email, password} = req.body;
+    const user = await User.findByCredentials(email, password);
+    res.send(user);
+  }catch(err){
+    res.send(err.message);
+  }
+});
+
 export {router};

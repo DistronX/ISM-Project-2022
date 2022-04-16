@@ -29,6 +29,21 @@ const UserSchema = new mongoose.Schema({
   }
 });
 
+UserSchema.statics.findByCredentials = async (email, password) => {
+  const user = await User.findOne({
+    email: email,
+  });
+  if (!user) {
+    throw new Error("User not found");
+  }
+  const passwordMatched = await bcrypt.compare(password, user.password);
+  if (!passwordMatched) {
+    return "Password Incorrect";
+  }
+  return user;
+};
+
+
 UserSchema.pre("save", async function(next) {
   if (this.isModified("password")) {
     const hash = await bcrypt.hash(this.password, 8);
