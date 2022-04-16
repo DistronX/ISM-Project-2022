@@ -21,7 +21,25 @@ app.use('/user', UserRouter);
 
 app.get('/', (req, res) => {
   try{
-    res.render("signup");
+    res.render("user_signup");
+  }catch(err){
+    console.log(err);
+    res.status(500).send(err);
+  }
+});
+
+app.get('/doctorsignup', (req, res) => {
+  try{
+    res.render("doctor_signup");
+  }catch(err){
+    console.log(err);
+    res.status(500).send(err);
+  }
+});
+
+app.get('/usersignup', (req, res) => {
+  try{
+    res.render("user_signup");
   }catch(err){
     console.log(err);
     res.status(500).send(err);
