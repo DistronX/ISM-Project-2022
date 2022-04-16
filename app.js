@@ -3,7 +3,7 @@ import cors from 'cors';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
 
-import './config/mongo.js';
+// import './config/mongo.js';
 import {router as UserRouter} from './src/routers/user.js';
 import {router as DoctorRouter} from './src/routers/doctor.js';
 
