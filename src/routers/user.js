@@ -5,7 +5,7 @@ const router = new express.Router();
 
 router.get('/signup', async (req, res) => {
   try{
-    res.render("login");
+    res.render("signup");
   }catch(err){
     res.send(err.message);
   }
@@ -13,7 +13,8 @@ router.get('/signup', async (req, res) => {
 
 router.post('/signup', async (req, res) => {
   try{
-    
+    console.log(req.body);
+    res.send("ok fine");
   }catch(err){
     res.send(err.message);
   }
