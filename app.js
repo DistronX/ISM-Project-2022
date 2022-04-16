@@ -10,7 +10,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 
-app.use(express.static('static/css'));
+app.use(express.static('static'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use(morgan("dev"));
@@ -21,7 +21,7 @@ app.use('/user', UserRouter);
 
 app.get('/', (req, res) => {
   try{
-    res.render("login");
+    res.render("signup");
   }catch(err){
     console.log(err);
     res.status(500).send(err);
