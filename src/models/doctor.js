@@ -7,6 +7,7 @@ const DoctorSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
+    unique: true,
   },
   password: {
     type: String,
@@ -26,7 +27,10 @@ const DoctorSchema = new mongoose.Schema({
   phoneNumber: {
     type: String,
     unique: true,
-  }
+  },
+  specialization: {
+    type: String,
+  },
 });
 
 

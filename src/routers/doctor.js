@@ -1,12 +1,13 @@
 import express from 'express';
-import { User } from '../models/user.js';
+
+import { Doctor } from '../models/doctor.js';
 
 const router = new express.Router();
 
 
 router.get('/signup', async (req, res) => {
   try{
-    res.render("user_signup");
+    res.render("doctor_signup");
   }catch(err){
     res.send(err.message);
   }
@@ -14,9 +15,9 @@ router.get('/signup', async (req, res) => {
 
 router.post('/signup', async (req, res) => {
   try{
-    const user = new User(req.body);
-    await user.save();
-    res.send(user);
+    const doctor = new Doctor(req.body);
+    await doctor.save();
+    res.send(doctor);
   }catch(err){
     res.send(err.message);
   }

@@ -5,6 +5,7 @@ import bodyParser from 'body-parser';
 
 // import './config/mongo.js';
 import {router as UserRouter} from './src/routers/user.js';
+import {router as DoctorRouter} from './src/routers/doctor.js';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -18,6 +19,7 @@ app.set("view engine","ejs");
 
 
 app.use('/user', UserRouter);
+app.use('/doctor', DoctorRouter);
 
 app.get('/', (req, res) => {
   try{
