@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Login</title>
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <%- include('pages/nav'); -%>
+
+    <div class="jumbotron custom-jumbo">
+      <div class="container">
+        <h1 class="display-4">MIEA Platform</h1>
+        <p class="lead">Medical Image Encryption with Access Control</p>
+        <hr class="my-4">
+        <p>Get started by signing up by clicking on one of the buttons below</p>
+        <p class="lead">
+        <div class="cta">
+          <form action="/user/signup" class="cta-form" method="GET">
+            <a class="btn btn-primary btn-lg" href="/user/signup" role="button">
+              User Signup
+            </a>
+          </form>
+
+          <form action="/doctor/signup" class="cta-form" method="GET">
+            <a class="btn btn-primary btn-lg" href="/doctor/signup" role="button">Doctor Signup</a>
+          </form>
+        </div>
+        </p>
+      </div>
+    </div>
+
+    <div class="container">
+      Hello world
+    </div>
+
+
+</body>
+
+</html>
