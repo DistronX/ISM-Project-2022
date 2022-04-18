@@ -7,13 +7,12 @@ Driver for the algorithm defined in crypto.
 @author: Manuel Macho Becerra
 """
 
-import numpy
+from logging import root
 import os
 import imageutil
 import matrixutil
 import crypto
 import numpy as np
-from numpy import save,load
 
 
 def encryption(path):
@@ -28,9 +27,11 @@ def encryption(path):
     list1=mask.tolist()
     # print(list1)
     # print(shape)
-    path1="/Users/karanrochlani/Documents/GitHub/ISM-Project-2022/Test/process/cyphered_"+name[0:-3]+"png"
-    imageutil.save_image(cypheredImage, path1)
-    return path1,list1,shape
+    root_dir = os.path.dirname(os.getcwd())
+    base_image_path = 'Test/process/cyphered_'+name[0:-3]+'png'
+    file_path = os.path.join(root_dir, base_image_path)
+    imageutil.save_image(cypheredImage, file_path)
+    return file_path,list1,shape
 
 def decryption(path,ar,shape):
     name=os.path.basename(path)
@@ -43,9 +44,11 @@ def decryption(path,ar,shape):
     mask=np.array(ar)
     decypheredImage = crypto.decypher_image(cypheredImage, mask, shape, *a, *cm1, *cm2, block_size)
     # url = "../Test/process/decyphered_" + name
-    path1="/Users/karanrochlani/Documents/GitHub/ISM-Project-2022/Test/process/decyphered_"+name
-    imageutil.save_image(decypheredImage, "../Test/process/decyphered"+name)
-    return path1
+    root_dir = os.path.dirname(os.getcwd())
+    base_image_path = 'Test/process/decyphered_'+name
+    file_path = os.path.join(root_dir, base_image_path)
+    imageutil.save_image(decypheredImage, file_path)
+    return file_path
 
 # print("1:encryption")
 # print("2:decryption")
