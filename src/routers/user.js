@@ -32,4 +32,31 @@ router.post('/login', async (req, res) => {
   }
 });
 
+router.get('/dash', async (req, res) => {
+  try{
+    res.render("patient");
+  }catch(err){
+    console.log(err);
+    res.status(500).send(err);
+  }
+});
+
+router.get('/newvisit', async (req, res) => {
+  try{
+    res.render("patient_new_visit");
+  }catch(err){
+    console.log(err);
+    res.status(500).send(err);
+  }
+});
+
+router.get('/prevvisits', async (req, res) => {
+  try{
+    res.render("patient_prev_visit");
+  }catch(err){
+    console.log(err);
+    res.status(500).send(err);
+  }
+});
+
 export {router};

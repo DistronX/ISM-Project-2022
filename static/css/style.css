@@ -15,3 +15,44 @@
 .color-bg-white {
     background-color: white;
 }
+
+.flex-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 300px;
+    margin: 30px 20px;
+    display: flex;
+    padding: 20px;
+}
+
+.nonflex-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: fit-content;
+    min-height: 250px;
+    margin: 30px 0;
+    margin-left: 25px;
+    padding: 40px;
+}
+
+.profile-img {
+    position: relative;
+    top: auto;
+    width: 250px;
+    height: 250px;
+}
+
+.profile-content {
+    padding: 50px;
+}
+
+.page {
+    display: flex;
+}
+
+.home-content {
+    width: 100%;
+}
+
+.bg-custom {
+    background-color: lightgray;
+    color: black;
+}
