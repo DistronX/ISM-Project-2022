@@ -30,7 +30,7 @@
             <hr>
             <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item">
-                    <a href="/user/dash" class="nav-link text-white" aria-current="page">
+                    <a href="#" class="nav-link active" aria-current="page">
                         <svg class="bi me-2" width="16" height="16">
                             <use xlink:href="#home"></use>
                         </svg>
@@ -38,7 +38,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/user/visit/new" class="nav-link active">
+                    <a href="/user/newvisit" class="nav-link text-white">
                         <svg class="bi me-2" width="16" height="16">
                             <use xlink:href="#speedometer2"></use>
                         </svg>
@@ -46,7 +46,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/user/visit/all" class="nav-link text-white">
+                    <a href="/user/prevvisits" class="nav-link text-white">
                         <svg class="bi me-2" width="16" height="16">
                             <use xlink:href="#table"></use>
                         </svg>
@@ -71,23 +71,27 @@
             </div>
         </div>
         <div class="home-content">
-            <div class="page" style="display: block; padding: 30px;">
-                <h1>New Visit</h1>
-                <form action="" class="mt-4">
-                    <div class="form-group">
-                        <label for="doctor">Enter Doctor's Name</label>
-                        <input type="text" name="doctor" id="doctor" class="form-control">
-                    </div>
-                    <div class="form-group mt-4">
-                        <input type="file" name="report" id="report" class="form-control">
-                    </div>
-                    <div class="form-group mt-4">
-                        <label for="doctor">Detailed Explaination of Ailment</label>
-                        <textarea name="message" id="message" cols="30" rows="10" class="form-control"></textarea>
-                    </div>
-                    <button type="submit">Submit</button>
-                </form>
+            <div class="page">
+                <div class="nonflex-card">
+                    <h2>Welcome to MEIA,</h2>
+                    <h4>Ambuj Gupta</h4>
+                    <p>
+                        To select a doctor and send reports, click on "New Visit". To <br>
+                        see previous visits to doctors visit the "Previous Visits" page.
+                    </p>
+                </div>
+                <div class="nonflex-card">
+                    <h2>Previous Visits</h2>
+                    <span style="font-size: 4.5rem; font-weight: 900;">
+                        10
+                    </span>
+                </div>
             </div>
+            <!-- <div class="page">
+                <div class="nonflex-card">
+                    hello
+                </div>
+            </div> -->
         </div>
     </div>
 

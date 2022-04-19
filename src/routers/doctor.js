@@ -33,4 +33,13 @@ router.post('/login', async (req, res) => {
   }
 });
 
+// router.get('/dash', async (req, res) => {
+//   try{
+//     res.render("doctor");
+//   }catch(err){
+//     console.log(err);
+//     res.status(500).send(err);
+//   }
+// });
+
 export {router};
