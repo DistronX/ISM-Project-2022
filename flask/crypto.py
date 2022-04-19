@@ -359,7 +359,7 @@ def mask_block(i, omega, l, y):
 	p = 1
 
 	for j in range(l):
-		o = 1 + (omega.T[j].dot(numpy.array([numpy.product(i) for i in numpy.transpose(i, (1, 0, 2))])) % math.floor((l*l)/4))
+		o = (int)(1 + (omega.T[j].dot(numpy.array([numpy.product(i) for i in numpy.transpose(i, (1, 0, 2))])) % math.floor((l*l)/4)))
 		numpy.roll(omega.T[j], -p)
 		p = 1 + math.floor(l*y[o])
 
