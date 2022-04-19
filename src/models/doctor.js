@@ -31,6 +31,8 @@ const DoctorSchema = new mongoose.Schema({
   specialization: {
     type: String,
   },
+}, {
+  timestamps: true,
 });
 
 

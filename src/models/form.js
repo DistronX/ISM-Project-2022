@@ -23,10 +23,15 @@ const FormSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  viewAccessList: {
-    type: [String],
-    default: []
-  }
+  ownerId: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+  },
+  viewAccess: {
+    type: String,
+  },
+}, {
+  timestamps: true,
 });
 
 const Form = mongoose.model('Form', FormSchema);

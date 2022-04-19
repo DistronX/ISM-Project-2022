@@ -3,7 +3,7 @@ import cors from 'cors';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
 
-// import './config/mongo.js';
+import './config/mongo.js';
 import {router as UserRouter} from './src/routers/user.js';
 import {router as DoctorRouter} from './src/routers/doctor.js';
 import {router as FormRouter} from './src/routers/form.js';
@@ -32,26 +32,6 @@ app.get('/', (req, res) => {
   }
 });
 
-// TODO: Remove it
-app.get('/doctorsignup', (req, res) => {
-  try{
-    res.render("doctor_signup");
-  }catch(err){
-    console.log(err);
-    res.status(500).send(err);
-  }
-});
-
-
-// TODO: Remove it
-app.get('/usersignup', (req, res) => {
-  try{
-    res.render("user_signup");
-  }catch(err){
-    console.log(err);
-    res.status(500).send(err);
-  }
-});
 
 app.get('/login', (req, res) => {
   try{

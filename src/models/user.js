@@ -3,6 +3,11 @@ import bcrypt from 'bcryptjs';
 import validator from "validator";
 
 
+
+import { Form } from "./form.js";
+
+
+
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -27,6 +32,8 @@ const UserSchema = new mongoose.Schema({
     type: String,
     unique: true,
   }
+}, {
+  timestamps: true,
 });
 
 UserSchema.statics.findByCredentials = async (email, password) => {
@@ -42,6 +49,11 @@ UserSchema.statics.findByCredentials = async (email, password) => {
   }
   return user;
 };
+
+UserSchema.methods.forms =  async function() {
+  const forms = await Form.find({ownerId: this._id});
+  return forms;
+}
 
 
 UserSchema.pre("save", async function(next) {
