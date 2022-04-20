@@ -20,30 +20,91 @@
 <body>
   <%- include('pages/nav'); -%>
 
-    <div class="jumbotron custom-jumbo">
-      <div class="container">
-        <h1 class="display-4">MIEA Platform</h1>
-        <p class="lead">Medical Image Encryption with Access Control</p>
-        <hr class="my-4">
-        <p>Get started by signing up by clicking on one of the buttons below</p>
-        <p class="lead">
-        <div class="cta">
-          <form action="/user/signup" class="cta-form" method="GET">
-            <a class="btn btn-primary btn-lg" href="/user/signup" role="button">
-              User Signup
-            </a>
-          </form>
+  <div class="jumbotron custom-jumbo">
+    <div class="container text-center">
+      <h1 class="display-4">MIEA Platform</h1>
+      <p class="lead">Medical Image Encryption with Access Control</p>
+      <hr class="my-4">
+      <p>Get started by signing up by clicking on one of the buttons below</p>
+      <p class="lead">
+      <div class="cta" style="justify-content: center;">
+        <form action="/user/signup" class="cta-form" method="GET">
+          <a class="btn btn-primary btn-md" href="/user/signup" role="button">
+            User Signup
+          </a>
+        </form>
+        <form action="/doctor/signup" class="cta-form" method="GET">
+          <a class="btn btn-primary btn-md" href="/doctor/signup" role="button">Doctor Signup</a>
+        </form>
+      </div>
+      </p>
+    </div>
+  </div>
 
-          <form action="/doctor/signup" class="cta-form" method="GET">
-            <a class="btn btn-primary btn-lg" href="/doctor/signup" role="button">Doctor Signup</a>
-          </form>
+  <div class="bg-light">
+    <div class="container pt-4 pb-4" id="features">
+      <h3>Features</h3>
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top"
+              data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+              alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;"
+              src="img/encrypt.png"
+              data-holder-rendered="true">
+            <div class="card-body">
+              <h5 class="card-title">Image Encryption</h5>
+              <p class="card-text">
+                Medical Image Encryption using Chaotic Map technique. The encrypted image is
+                stored in the MongoDB database and is encrypted and decrypted using a Flask API.
+              </p>
+            </div>
+          </div>
         </div>
-        </p>
+        <div class="col-md-4">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top"
+              data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+              alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;"
+              src="img/secure-login.png"
+              data-holder-rendered="true">
+            <div class="card-body">
+              <h5 class="card-title">Secure Login</h5>
+              <p class="card-text">
+                MongoDB is also used to store the user details and email is used as the username. The password is stored in the
+                database with hashing.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top"
+              data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+              alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;"
+              src="img/nodejs-cta.png"
+              data-holder-rendered="true">
+            <div class="card-body">
+              <h5 class="card-title">NodeJS + Flask API</h5>
+              <p class="card-text">
+                The website is made using NodeJS. NodeJS was selected
+                due to its ease of use and Flask was chosed for the API as it is in Python which makes algorithms easy to code.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
 
-    <div class="container">
+  <div class="bg-custom">
+    <div class="container pt-4 pb-4">
+      <h3>About</h3>
+      <p>
+        
+      </p>
     </div>
+  </div>
 
 
 </body>
