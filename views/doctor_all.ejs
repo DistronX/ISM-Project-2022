@@ -30,7 +30,7 @@
             <hr>
             <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item">
-                    <a href="/user/dash" class="nav-link text-white" aria-current="page">
+                    <a href="/doctor/dash" class="nav-link text-white" aria-current="page">
                         <svg class="bi me-2" width="16" height="16">
                             <use xlink:href="#home"></use>
                         </svg>
@@ -38,15 +38,15 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/user/visit/new" class="nav-link text-white">
+                    <a href="/doctor/visits/my" class="nav-link text-white">
                         <svg class="bi me-2" width="16" height="16">
                             <use xlink:href="#speedometer2"></use>
                         </svg>
-                        New Visit
+                        My Visits
                     </a>
                 </li>
                 <li>
-                    <a href="/user/visit/all" class="nav-link active">
+                    <a href="/doctor/visits/all" class="nav-link active">
                         <svg class="bi me-2" width="16" height="16">
                             <use xlink:href="#table"></use>
                         </svg>
@@ -59,7 +59,7 @@
                 <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
                     id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="/img/user.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                    <strong><%=userName%></strong>
+                    <strong><%=doctorName%></strong>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
                     <li><a class="dropdown-item" href="#">New project...</a></li>
@@ -72,17 +72,17 @@
         </div>
         <div class="home-content">
             <div class="page" style="display: block; padding: 30px;">
-                <h1>Previous Visits</h1>
-                    <!-- <div class="card-header">
-                      Featured
-                    </div> -->
+                <h1>All Visits</h1>
+                    <div class="card-header">
+                      All Forms
+                    </div>
                     <%const allForms=forms%>
                     <%for(let i=0;i<=allForms.length-1;i++){%>
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-text">Doctor Name: <%=forms[i].doctor%></p>
                                 <h5 class="card-title">Message: <%=forms[i].message%></h5>
-                                <img id="my_img" src="/<%= forms[i].documentMeta.dec_rel_path %>" alt="">
+                                <img id="my_img" src="/<%= forms[i].imageToDisplay %>" alt="">
                           </div>
                         </div>
                     </br>

@@ -43,6 +43,15 @@ app.get('/login', (req, res) => {
   }
 });
 
+app.get('/logout', (req, res) => {
+  try{
+    res.render("login");
+  }catch(err){
+    console.log(err);
+    res.status(500).send(err);
+  }
+});
+
 
 app.listen(port, () => {
   console.log(`Server is running at PORT: ${port}`);

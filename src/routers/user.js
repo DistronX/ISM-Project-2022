@@ -9,6 +9,7 @@ import { Form } from '../models/form.js';
 import { upload } from '../lib/upload.js';
 import { decryptImage, encryptImage } from '../lib/image_utils.js';
 import { decryptText, encryptText } from '../lib/common_utils.js';
+import { Doctor } from '../models/doctor.js';
 
 
 let SESSION_USER_ID = undefined;
@@ -17,7 +18,7 @@ router.get('/signup', async (req, res) => {
   try{
     res.render("user_signup");
   }catch(err){
-    res.send(err.message);
+    res.render("500");
   }
 });
 
@@ -28,7 +29,7 @@ router.post('/signup', async (req, res) => {
     await user.save();
     res.redirect('/login');
   }catch(err){
-    res.send(err.message);
+    res.render("500");
   }
 });
 
@@ -41,7 +42,7 @@ router.post('/login', async (req, res) => {
     SESSION_USER_ID = user._id
     res.render("patient", {formCount: userForms.length, userName: user.name});
   }catch(err){
-    res.send(err.message);
+    res.render("404");
   }
 });
 
@@ -58,7 +59,7 @@ router.get('/dash', async (req, res) => {
     }
   }catch(err){
     console.log(err);
-    res.status(500).send(err);
+    res.render("500");
   }
 });
 
@@ -70,11 +71,13 @@ router.get('/visit/new', async (req, res) => {
     }
     else{
       const user = await User.findById(SESSION_USER_ID);
-      res.render("patient_new_visit", {userName: user.name});
+      let doctorList = await Doctor.find({});
+      doctorList = doctorList.map((doctor) => doctor.name);
+      res.render("patient_new_visit", {userName: user.name, doctors: doctorList});
     }
   }catch(err){
     console.log(err);
-    res.status(500).send(err);
+    res.render("500");
   }
 });
 
@@ -89,7 +92,6 @@ router.post('/visit/new', upload.single('file1'), async (req, res) => {
       const filePath = file.path;
       const {encrypted_image, mask, shape, enc_rel_path} = await encryptImage(filePath);
       const {decrypted_image, dec_rel_path} = await decryptImage(encrypted_image, mask, shape);
-      console.log(enc_rel_path.split('/'))
       const form = new Form({
         documentMeta: {
           enc_path: encrypted_image,
@@ -113,7 +115,7 @@ router.post('/visit/new', upload.single('file1'), async (req, res) => {
     }
   }catch(err){
     console.log(err);
-    res.status(500).send(err);
+    res.render("500");
   }
 });
 
@@ -133,7 +135,7 @@ router.get('/visit/all', async (req, res) => {
     }
   }catch(err){
     console.log(err);
-    res.status(500).send(err);
+    res.render("500");
   }
 });
 

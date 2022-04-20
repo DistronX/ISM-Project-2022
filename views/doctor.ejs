@@ -30,7 +30,7 @@
             <hr>
             <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item">
-                    <a href="#" class="nav-link active" aria-current="page">
+                    <a href="/doctor/dash" class="nav-link active" aria-current="page">
                         <svg class="bi me-2" width="16" height="16">
                             <use xlink:href="#home"></use>
                         </svg>
@@ -38,19 +38,19 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/user/newvisit" class="nav-link text-white">
+                    <a href="/doctor/visits/my" class="nav-link text-white">
                         <svg class="bi me-2" width="16" height="16">
                             <use xlink:href="#speedometer2"></use>
                         </svg>
-                        New Visit
+                        My Visits
                     </a>
                 </li>
                 <li>
-                    <a href="/user/prevvisits" class="nav-link text-white">
+                    <a href="/doctor/visits/all" class="nav-link text-white">
                         <svg class="bi me-2" width="16" height="16">
                             <use xlink:href="#table"></use>
                         </svg>
-                        Previous Visits
+                        All Visits
                     </a>
                 </li>
             </ul>
@@ -59,14 +59,14 @@
                 <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
                     id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="/img/user.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                    <strong>mdo</strong>
+                    <strong><%=doctorName%></strong>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
                     <li><a class="dropdown-item" href="#">New project...</a></li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
-                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    <li><a class="dropdown-item" href="/logout">Sign out</a></li>
                 </ul>
             </div>
         </div>
@@ -74,16 +74,16 @@
             <div class="page">
                 <div class="nonflex-card">
                     <h2>Welcome to MEIA,</h2>
-                    <h4>Ambuj Gupta</h4>
+                    <h4><%=doctorName%></h4>
                     <p>
                         To select a doctor and send reports, click on "New Visit". To <br>
                         see previous visits to doctors visit the "Previous Visits" page.
                     </p>
                 </div>
                 <div class="nonflex-card">
-                    <h2>Previous Visits</h2>
+                    <h2>My Visits</h2>
                     <span style="font-size: 4.5rem; font-weight: 900;">
-                        10
+                        <%=selfFormCount%>
                     </span>
                 </div>
             </div>
