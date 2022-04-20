@@ -1,6 +1,6 @@
 .custom-jumbo {
     padding: 1.5rem 0;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
     background-color: rgb(238, 235, 235);
 }
 
@@ -53,6 +53,6 @@
 }
 
 .bg-custom {
-    background-color: lightgray;
+    background-color: rgb(237, 235, 235);
     color: black;
 }
