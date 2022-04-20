@@ -50,7 +50,7 @@
                         <svg class="bi me-2" width="16" height="16">
                             <use xlink:href="#table"></use>
                         </svg>
-                        Previous Visits
+                        All Visits
                     </a>
                 </li>
             </ul>
@@ -59,7 +59,7 @@
                 <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
                     id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="/img/user.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                    <strong>mdo</strong>
+                    <strong><%=userName%></strong>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
                     <li><a class="dropdown-item" href="#">New project...</a></li>
@@ -73,20 +73,23 @@
         <div class="home-content">
             <div class="page" style="display: block; padding: 30px;">
                 <h1>Previous Visits</h1>
-                <div class="card">
-                    <div class="card-header">
+                    <!-- <div class="card-header">
                       Featured
-                    </div>
-                    <div class="card-body">
-                      <h5 class="card-title">Special title treatment</h5>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                  </div>
+                    </div> -->
+                    <%const allForms=forms%>
+                    <%for(let i=0;i<=allForms.length-1;i++){%>
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-text">Doctor Name: <%=forms[i].doctor%></p>
+                                <h5 class="card-title">Message: <%=forms[i].message%></h5>
+                                <img id="my_img" src="/<%= forms[i].documentMeta.dec_rel_path %>" alt="">
+                          </div>
+                        </div>
+                    </br>
+                    <%}%>
             </div>
         </div>
     </div>
-
 </body>
 
 </html>

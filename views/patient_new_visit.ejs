@@ -50,7 +50,7 @@
                         <svg class="bi me-2" width="16" height="16">
                             <use xlink:href="#table"></use>
                         </svg>
-                        Previous Visits
+                        All Visits
                     </a>
                 </li>
             </ul>
@@ -59,7 +59,7 @@
                 <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
                     id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="/img/user.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                    <strong>mdo</strong>
+                    <strong><%=userName%></strong>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
                     <li><a class="dropdown-item" href="#">New project...</a></li>
@@ -73,19 +73,19 @@
         <div class="home-content">
             <div class="page" style="display: block; padding: 30px;">
                 <h1>New Visit</h1>
-                <form action="" class="mt-4">
+                <form action="/user/visit/new" class="mt-4" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="doctor">Enter Doctor's Name</label>
                         <input type="text" name="doctor" id="doctor" class="form-control">
                     </div>
                     <div class="form-group mt-4">
-                        <input type="file" name="report" id="report" class="form-control">
+                        <input type="file" name="file1" id="file1" class="form-control">
                     </div>
                     <div class="form-group mt-4">
                         <label for="doctor">Detailed Explaination of Ailment</label>
                         <textarea name="message" id="message" cols="30" rows="10" class="form-control"></textarea>
                     </div>
-                    <button type="submit">Submit</button>
+                    <button class="btn btn-primary mt-4" type="submit">Submit</button>
                 </form>
             </div>
         </div>

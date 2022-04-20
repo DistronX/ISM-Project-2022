@@ -13,6 +13,7 @@ const port = process.env.PORT || 3000;
 
 
 app.use(express.static('static'));
+app.use(express.static('Test/process'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use(morgan("dev"));

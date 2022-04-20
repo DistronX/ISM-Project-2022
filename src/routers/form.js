@@ -22,6 +22,7 @@ router.post('/create', upload.single('file'), async (req, res) => {
         shape: shape,
       },
       message: body.message,
+      doctor: body.doctor
     });
     await form.save();
     // TODO: Here redirection should be to the post login page of the user.

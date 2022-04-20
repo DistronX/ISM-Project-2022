@@ -4,11 +4,23 @@ import mongoose from "mongoose";
 const FormSchema = new mongoose.Schema({
   documentMeta: {
     type: {
-      path: {
+      enc_path: {
         type: String,
         required: true,
       },
-      mark: {
+      enc_rel_path: {
+        type: String,
+        required: true,
+      },
+      dec_path: {
+        type: String,
+        required: true,
+      },
+      dec_rel_path: {
+        type: String,
+        required: true,
+      },
+      mask: {
         type: [[Number]],
         required: true,
       },
@@ -27,8 +39,9 @@ const FormSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     required: true,
   },
-  viewAccess: {
+  doctor: {
     type: String,
+    required: true
   },
 }, {
   timestamps: true,

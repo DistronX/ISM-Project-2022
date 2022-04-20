@@ -3,8 +3,8 @@ import axios from 'axios';
 import { exit } from 'process';
 
 
-const ENCRYPTION_BASE_URL = 'http://192.168.43.217:5000/encryption';
-const DECRYPTION_BASE_URL = 'http://192.168.43.217:5000/decryption';
+const ENCRYPTION_BASE_URL = 'http://172.17.63.89:5000/encryption';
+const DECRYPTION_BASE_URL = 'http://172.17.63.89:5000/decryption';
 
 
 export const encryptImage = async (image_path) => {

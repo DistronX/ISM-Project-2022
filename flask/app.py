@@ -10,11 +10,12 @@ def encryption():
   if request.method == 'POST':
         result = request.get_json()
         image = result['path']
-        encrypted_image,mask,shape = main.encryption(image)
+        encrypted_image,mask,shape, enc_rel_path = main.encryption(image)
         new_result={
           'encrypted_image':encrypted_image,
           'mask':mask,
-          'shape':shape
+          'shape':shape,
+          'enc_rel_path': enc_rel_path
         }
         return jsonify(new_result)
 
@@ -27,9 +28,10 @@ def decryptiom():
         image = result['encrypted_image']
         mask=result['mask']
         shape=result['shape']
-        decrypted_image = main.decryption(image,mask,shape)
+        decrypted_image, dec_rel_path = main.decryption(image,mask,shape)
         new_result={
-          'decrypted_image':decrypted_image
+          'decrypted_image':decrypted_image,
+          'dec_rel_path': dec_rel_path
         }
         return jsonify(new_result)
 

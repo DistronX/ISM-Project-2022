@@ -50,8 +50,10 @@ UserSchema.statics.findByCredentials = async (email, password) => {
   return user;
 };
 
-UserSchema.methods.forms =  async function() {
+UserSchema.methods.forms = async function() {
+  console.log(this._id)
   const forms = await Form.find({ownerId: this._id});
+  console.log(forms)
   return forms;
 }
 
