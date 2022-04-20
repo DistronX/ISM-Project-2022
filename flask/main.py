@@ -28,7 +28,7 @@ def encryption(path):
     # print(list1)
     # print(shape)
     root_dir = os.path.dirname(os.getcwd())
-    base_image_path = 'ISM-Project-2022/Test/process/cyphered_'+name[0:-3]+'png'
+    base_image_path = 'Test/process/cyphered_'+name[0:-3]+'png'
     file_path = os.path.join(root_dir, base_image_path)
     print(os.path.relpath(file_path))
     print(file_path)
@@ -47,7 +47,7 @@ def decryption(path,ar,shape):
     decypheredImage = crypto.decypher_image(cypheredImage, mask, shape, *a, *cm1, *cm2, block_size)
     # url = "../Test/process/decyphered_" + name
     root_dir = os.path.dirname(os.getcwd())
-    base_image_path = 'ISM-Project-2022/Test/process/decyphered_'+name
+    base_image_path = 'Test/process/decyphered_'+name
     file_path = os.path.join(root_dir, base_image_path)
     print(os.path.relpath(file_path))
     imageutil.save_image(decypheredImage, file_path)

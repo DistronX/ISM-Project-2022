@@ -67,7 +67,7 @@ router.get('/visits/all', async (req, res) => {
         const encImg = form.documentMeta.enc_rel_path.split('/')[form.documentMeta.enc_rel_path.split('/').length - 1];
         const decImg = form.documentMeta.dec_rel_path.split('/')[form.documentMeta.dec_rel_path.split('/').length - 1];
         form.imageToDisplay = (form.doctor == doctor.name) ? decImg : encImg;
-        form.message = decryptText(form.message);
+        form.message = (form.doctor == doctor.name) ? decryptText(form.message) : form.message;
       })
       res.render("doctor_all", {doctorName: doctor.name, forms: allForms});
     }

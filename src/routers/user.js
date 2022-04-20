@@ -89,6 +89,7 @@ router.post('/visit/new', upload.single('file1'), async (req, res) => {
     }
     else{
       const {file, body} = req;
+      console.log(file);
       const filePath = file.path;
       const {encrypted_image, mask, shape, enc_rel_path} = await encryptImage(filePath);
       const {decrypted_image, dec_rel_path} = await decryptImage(encrypted_image, mask, shape);
